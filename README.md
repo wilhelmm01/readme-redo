@@ -1,8 +1,8 @@
-# gggggggggggg
-
+# Generate Readme
+  ![Github licence](http://img.shields.io/badge/license-OSU-red.svg)
 ## Description
-![Github licence](http://img.shields.io/badge/license-OSU-red.svg)
-g
+
+Generating a readme
 
 ##Table of Contents
 * [Installation Instructions](#installation-instructions)
@@ -14,17 +14,17 @@ g
 
 
 ## Installation Instructions
-g
+node index
 ## App Uses
-g
+Generating readme
 ## License Information
 OSU
 ## Contribution
-g
+e-mail me
 ##Tests
-g
+it works
 
 ## Questions
-Please contact me at g. You may also visit my github page at https://github.com/g
+Please contact me at matt14w@gmail.com. You may also visit my github page at https://github.com/wilhelmm01
 
 
