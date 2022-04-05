@@ -1,13 +1,23 @@
 
-
+const fs = require('fs');
 const inquirer = require('inquirer'); 
 
-const questions = () => {
-    
+const generatePage = require('./utils/generateMarkdown.js');
+
+
+const promptUser = () => {
+
+    console.log(`
+    *******************
+       NEW PROJECT
+    *******************
+
+    `)
+
     return inquirer.prompt([
     {
         type: 'input',
-        name: 'Project',
+        name: 'project',
         message: "What's your Project Name",
     },
     {
@@ -21,7 +31,6 @@ const questions = () => {
         message: 'Installation Instructions',
        
     },
-
     {
         type: 'input',
         name: 'uses',
@@ -39,9 +48,45 @@ const questions = () => {
         message: 'How to contribute',
         
     },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Product License?',
+        choices: ['OSU', 'ME'],
+        default: ["OSU"],
+    },
+    {
+        type: 'input',
+        name: 'githum',
+        message: "What's your github username",
+        
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "What's your email address",
+        
+    },
+
    
 ]);
 };
 
+const writeFile = data => {
+    fs.writeFile('README.md', data, answers => {
+        if (answers) {
+            console.log("checkout readme!");
+        } 
+    })
+}; 
 
-questions()
+
+promptUser()
+.then(answers => {
+    return generatePage(answers);
+})
+.then(data => {
+    return writeFile(data);
+})
+ 
+
